@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150224031239) do
+ActiveRecord::Schema.define(version: 20150228003920) do
 
   create_table "commands", force: true do |t|
     t.text     "command",    limit: 16777215
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20150224031239) do
     t.datetime "updated_at"
     t.datetime "deleted_at"
     t.string   "description"
+    t.boolean  "warning",     default: false, null: false
   end
 
   add_index "locks", ["stage_id", "deleted_at", "user_id"], name: "index_locks_on_stage_id_and_deleted_at_and_user_id", using: :btree
